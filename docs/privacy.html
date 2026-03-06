@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daysly - Privacy Policy / 隐私政策</title>
+    <meta name="description" content="Daysly Privacy Policy - We respect your privacy. All data stays on your device.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📅</text></svg>">
+    <style>
+        :root {
+            --accent: #FF6B6B;
+            --accent2: #FF8E53;
+            --bg: linear-gradient(135deg, #FFF5F5 0%, #FFF0E6 50%, #FEF9EF 100%);
+            --card-bg: #fff;
+            --text: #333;
+            --text2: #555;
+            --text3: #888;
+            --border: rgba(0,0,0,0.06);
+            --shadow: 0 2px 12px rgba(0,0,0,0.04);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            min-height: 100vh;
+            color: var(--text);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 48px 24px; }
+        .header { text-align: center; margin-bottom: 40px; }
+        .back {
+            display: inline-flex; align-items: center; gap: 4px;
+            margin-bottom: 20px; color: var(--accent); text-decoration: none;
+            font-size: 14px; font-weight: 500; transition: gap 0.2s;
+        }
+        .back:hover { gap: 8px; }
+        h1 { font-size: 26px; font-weight: 800; letter-spacing: -0.3px; }
+        .subtitle { color: var(--text3); font-size: 14px; margin-top: 4px; }
+        .lang-switch {
+            display: inline-flex; gap: 4px; margin-top: 20px;
+            background: white; border-radius: 24px; padding: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        }
+        .lang-btn {
+            padding: 8px 20px; border-radius: 20px; border: none;
+            cursor: pointer; font-size: 13px; font-weight: 600;
+            background: transparent; color: var(--text3); transition: all 0.25s;
+        }
+        .lang-btn.active {
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: white; box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+        }
+        .card {
+            background: var(--card-bg); border-radius: 18px;
+            padding: 28px; margin-bottom: 16px;
+            box-shadow: var(--shadow); border: 1px solid rgba(0,0,0,0.02);
+        }
+        .card h2 { font-size: 17px; font-weight: 700; margin-bottom: 12px; color: var(--accent); }
+        .card h3 { font-size: 15px; font-weight: 600; margin: 16px 0 8px; color: var(--text); }
+        .card p, .card li { font-size: 14px; color: var(--text2); margin-bottom: 8px; }
+        .card ul { padding-left: 20px; }
+        .card li { margin-bottom: 6px; }
+        .card a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        .card a:hover { text-decoration: underline; }
+        .highlight {
+            background: linear-gradient(135deg, #FFF0E6, #FFF8F6);
+            border-radius: 12px; padding: 16px 20px; margin: 12px 0;
+            border-left: 4px solid var(--accent);
+        }
+        .highlight p { margin-bottom: 0; font-weight: 500; color: var(--text); }
+        .update { font-size: 12px; color: var(--text3); text-align: center; margin-bottom: 16px; }
+        .footer {
+            text-align: center; margin-top: 48px; padding-top: 24px;
+            border-top: 1px solid var(--border); color: #aaa; font-size: 12px;
+        }
+        .footer a { color: #bbb; text-decoration: none; }
+        .footer a:hover { color: var(--accent); }
+        @media (max-width: 520px) {
+            .container { padding: 32px 16px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <a href="index.html" class="back">← Back / 返回技术支持</a>
+        <h1>Privacy Policy / 隐私政策</h1>
+        <p class="subtitle">Daysly - Countdown & Anniversary Tracker</p>
+        <div class="lang-switch">
+            <button class="lang-btn active" onclick="switchLang('zh')">中文</button>
+            <button class="lang-btn" onclick="switchLang('en')">English</button>
+        </div>
+    </div>
+
+    <!-- Chinese Content -->
+    <div id="content-zh">
+        <p class="update">最后更新日期：2026年3月6日</p>
+
+        <div class="card">
+            <h2>概述</h2>
+            <p>Daysly（以下简称"我们"）非常重视您的隐私。本隐私政策说明了我们如何处理您在使用 Daysly 应用（以下简称"本应用"）时的信息。</p>
+            <div class="highlight">
+                <p>核心原则：本应用不会收集、存储或传输您的任何个人数据到我们的服务器。您的所有数据完全由您自己掌控。</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>数据存储</h2>
+            <h3>本地存储</h3>
+            <p>您在本应用中创建的所有事件数据（包括事件名称、日期、时间、时区、备注等）均存储在您设备的本地数据库中。我们无法访问这些数据。</p>
+            <h3>iCloud 同步</h3>
+            <p>如果您选择开启 iCloud 同步功能，您的事件数据将通过 Apple 的 iCloud 服务在您的设备间进行同步。此功能完全依赖 Apple 的 iCloud 基础设施，数据存储在您的个人 iCloud 账户中。我们不会访问您的 iCloud 数据。</p>
+            <h3>系统日历</h3>
+            <p>如果您选择将事件添加到系统日历，相关事件信息将写入您设备的日历应用。此操作完全在本地进行。</p>
+        </div>
+
+        <div class="card">
+            <h2>权限使用</h2>
+            <p>本应用可能会请求以下设备权限，所有权限均为可选，您可以随时在系统设置中关闭：</p>
+            <ul>
+                <li><strong>麦克风</strong> — 仅用于语音识别创建事件功能。语音数据由 Apple 的语音识别服务（Apple Speech Framework）在设备端处理，不会发送至我们的服务器。</li>
+                <li><strong>通知</strong> — 用于发送事件倒计时提醒通知。</li>
+                <li><strong>日历</strong> — 仅在您选择"添加到系统日历"时使用，用于将事件同步到系统日历应用。</li>
+                <li><strong>iCloud</strong> — 仅在您开启 iCloud 同步功能时使用。</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>第三方服务</h2>
+            <p>本应用<strong>不使用任何第三方分析、广告或用户追踪工具</strong>。</p>
+            <p>本应用仅使用以下 Apple 原生服务：</p>
+            <ul>
+                <li>Apple Speech Framework — 设备端语音识别</li>
+                <li>Apple iCloud — 数据同步（用户可选）</li>
+                <li>Apple EventKit — 系统日历集成（用户可选）</li>
+                <li>Apple WidgetKit — 桌面小组件</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>数据安全</h2>
+            <p>由于所有数据均存储在您的设备本地或您的个人 iCloud 账户中，数据安全性取决于：</p>
+            <ul>
+                <li>您设备本身的安全设置（设备密码、Face ID / Touch ID 等）</li>
+                <li>Apple 的 iCloud 安全措施（如已开启 iCloud 同步）</li>
+            </ul>
+            <p>我们建议您开启设备密码保护以确保数据安全。</p>
+        </div>
+
+        <div class="card">
+            <h2>数据删除</h2>
+            <p>您可以随时在应用内删除单个事件或清空全部数据（设置 → 数据管理 → 清空所有数据）。卸载应用将自动删除所有本地数据。如已开启 iCloud 同步，您需要手动从 iCloud 中删除相应数据。</p>
+        </div>
+
+        <div class="card">
+            <h2>儿童隐私</h2>
+            <p>本应用不针对 13 岁以下儿童，也不会有意收集儿童的个人信息。</p>
+        </div>
+
+        <div class="card">
+            <h2>隐私政策更新</h2>
+            <p>我们可能会不时更新本隐私政策。更新后的政策将在此页面发布，并更新"最后更新日期"。建议您定期查看本页面。</p>
+        </div>
+
+        <div class="card">
+            <h2>联系我们</h2>
+            <p>如果您对本隐私政策有任何疑问或建议，请通过以下方式联系我们：</p>
+            <ul>
+                <li>邮箱：<a href="mailto:gsf0425@163.com">gsf0425@163.com</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- English Content -->
+    <div id="content-en" style="display: none;">
+        <p class="update">Last Updated: March 6, 2026</p>
+
+        <div class="card">
+            <h2>Overview</h2>
+            <p>Daysly ("we", "our") takes your privacy seriously. This Privacy Policy explains how we handle your information when you use the Daysly application ("the App").</p>
+            <div class="highlight">
+                <p>Core Principle: This App does not collect, store, or transmit any of your personal data to our servers. All your data is entirely under your control.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Data Storage</h2>
+            <h3>Local Storage</h3>
+            <p>All event data you create in the App (including event names, dates, times, timezones, notes, etc.) is stored in the local database on your device. We have no access to this data.</p>
+            <h3>iCloud Sync</h3>
+            <p>If you choose to enable iCloud sync, your event data will be synchronized across your devices through Apple's iCloud service. This feature relies entirely on Apple's iCloud infrastructure, and data is stored in your personal iCloud account. We do not access your iCloud data.</p>
+            <h3>System Calendar</h3>
+            <p>If you choose to add events to the system calendar, relevant event information is written to your device's Calendar app. This operation is performed entirely locally.</p>
+        </div>
+
+        <div class="card">
+            <h2>Permissions</h2>
+            <p>The App may request the following device permissions, all of which are optional and can be revoked at any time in system settings:</p>
+            <ul>
+                <li><strong>Microphone</strong> — Used solely for voice recognition to create events. Voice data is processed on-device by Apple's Speech Framework and is not sent to our servers.</li>
+                <li><strong>Notifications</strong> — Used to send countdown reminder notifications.</li>
+                <li><strong>Calendar</strong> — Used only when you choose "Add to System Calendar" to sync events to the system Calendar app.</li>
+                <li><strong>iCloud</strong> — Used only when you enable iCloud sync.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Third-Party Services</h2>
+            <p>This App <strong>does not use any third-party analytics, advertising, or user tracking tools</strong>.</p>
+            <p>The App utilizes only the following Apple native services:</p>
+            <ul>
+                <li>Apple Speech Framework — On-device voice recognition</li>
+                <li>Apple iCloud — Data sync (user opt-in)</li>
+                <li>Apple EventKit — System calendar integration (user opt-in)</li>
+                <li>Apple WidgetKit — Home screen widgets</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Data Security</h2>
+            <p>Since all data is stored locally on your device or in your personal iCloud account, data security depends on:</p>
+            <ul>
+                <li>Your device's security settings (passcode, Face ID / Touch ID, etc.)</li>
+                <li>Apple's iCloud security measures (if iCloud sync is enabled)</li>
+            </ul>
+            <p>We recommend enabling device passcode protection to ensure data security.</p>
+        </div>
+
+        <div class="card">
+            <h2>Data Deletion</h2>
+            <p>You can delete individual events or clear all data at any time within the app (Settings → Data Management → Clear All Data). Uninstalling the app will automatically remove all local data. If iCloud sync was enabled, you will need to manually remove the corresponding data from iCloud.</p>
+        </div>
+
+        <div class="card">
+            <h2>Children's Privacy</h2>
+            <p>This App is not intended for children under 13, and we do not knowingly collect personal information from children.</p>
+        </div>
+
+        <div class="card">
+            <h2>Policy Updates</h2>
+            <p>We may update this Privacy Policy from time to time. Updated policies will be posted on this page with a revised "Last Updated" date. We encourage you to review this page periodically.</p>
+        </div>
+
+        <div class="card">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or suggestions about this Privacy Policy, please contact us at:</p>
+            <ul>
+                <li>Email: <a href="mailto:gsf0425@163.com">gsf0425@163.com</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2026 Daysly. All rights reserved.</p>
+        <p style="margin-top: 4px;"><a href="index.html">Technical Support / 技术支持</a></p>
+    </div>
+</div>
+
+<script>
+function switchLang(lang) {
+    document.getElementById('content-zh').style.display = lang === 'zh' ? 'block' : 'none';
+    document.getElementById('content-en').style.display = lang === 'en' ? 'block' : 'none';
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.includes(lang === 'zh' ? '中文' : 'English'));
+    });
+}
+</script>
+</body>
+</html>
