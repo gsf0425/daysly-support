@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daysly - Technical Support / 技术支持</title>
+    <meta name="description" content="Daysly - Beautiful countdown and anniversary tracking app. Technical support and help center.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📅</text></svg>">
+    <style>
+        :root {
+            --accent: #FF6B6B;
+            --accent2: #FF8E53;
+            --bg: linear-gradient(135deg, #FFF5F5 0%, #FFF0E6 50%, #FEF9EF 100%);
+            --card-bg: #fff;
+            --text: #333;
+            --text2: #555;
+            --text3: #888;
+            --border: rgba(0,0,0,0.06);
+            --shadow: 0 2px 12px rgba(0,0,0,0.04);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            min-height: 100vh;
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 48px 24px; }
+        .header { text-align: center; margin-bottom: 48px; }
+        .logo {
+            width: 88px; height: 88px;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            border-radius: 22px;
+            display: inline-flex; align-items: center; justify-content: center;
+            margin-bottom: 20px;
+            box-shadow: 0 12px 32px rgba(255, 107, 107, 0.3);
+        }
+        .logo svg { width: 44px; height: 44px; fill: white; }
+        h1 { font-size: 32px; font-weight: 800; letter-spacing: -0.5px; }
+        .subtitle { color: var(--text3); font-size: 15px; margin-top: 4px; }
+        .lang-switch {
+            display: inline-flex; gap: 4px; margin-top: 20px;
+            background: white; border-radius: 24px; padding: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        }
+        .lang-btn {
+            padding: 8px 20px; border-radius: 20px; border: none;
+            cursor: pointer; font-size: 13px; font-weight: 600;
+            background: transparent; color: var(--text3); transition: all 0.25s;
+        }
+        .lang-btn.active {
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: white; box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+        }
+        .card {
+            background: var(--card-bg); border-radius: 18px;
+            padding: 28px 28px; margin-bottom: 16px;
+            box-shadow: var(--shadow); border: 1px solid rgba(0,0,0,0.02);
+        }
+        .card h2 {
+            font-size: 18px; font-weight: 700; margin-bottom: 14px;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .card h2 .icon {
+            width: 32px; height: 32px; border-radius: 10px;
+            display: inline-flex; align-items: center; justify-content: center;
+            font-size: 16px; flex-shrink: 0;
+        }
+        .card p, .card li { font-size: 15px; color: var(--text2); margin-bottom: 8px; }
+        .card ul { padding-left: 20px; }
+        .card li { margin-bottom: 10px; }
+        .card a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        .card a:hover { text-decoration: underline; }
+        .features { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 16px; }
+        .feature {
+            background: linear-gradient(135deg, #FFF8F6, #FFF3EE); border-radius: 14px;
+            padding: 14px 8px; text-align: center;
+            transition: transform 0.2s;
+        }
+        .feature:hover { transform: translateY(-2px); }
+        .feature .emoji { font-size: 26px; margin-bottom: 6px; }
+        .feature .label { font-size: 11px; font-weight: 600; color: var(--text2); }
+        .nav-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            margin-top: 8px; padding: 10px 20px; border-radius: 12px;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: white; text-decoration: none; font-size: 14px; font-weight: 600;
+            box-shadow: 0 4px 16px rgba(255, 107, 107, 0.25);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .nav-link:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(255, 107, 107, 0.35); text-decoration: none; }
+        .footer {
+            text-align: center; margin-top: 48px; padding-top: 24px;
+            border-top: 1px solid var(--border); color: #aaa; font-size: 12px;
+        }
+        .footer a { color: #bbb; text-decoration: none; }
+        .footer a:hover { color: var(--accent); }
+        @media (max-width: 520px) {
+            .features { grid-template-columns: repeat(2, 1fr); }
+            .container { padding: 32px 16px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="logo">
+            <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
+        </div>
+        <h1>Daysly</h1>
+        <p class="subtitle">Countdown & Anniversary Tracker</p>
+        <div class="lang-switch">
+            <button class="lang-btn active" onclick="switchLang('zh')">中文</button>
+            <button class="lang-btn" onclick="switchLang('en')">English</button>
+        </div>
+    </div>
+
+    <!-- Chinese Content -->
+    <div id="content-zh">
+        <div class="card">
+            <h2><span class="icon" style="background:#FFF0E6;">📱</span> 关于 Daysly</h2>
+            <p>Daysly 是一款精美的倒计时与纪念日追踪应用，帮助您优雅地记录生活中每一个重要时刻——从即将到来的生日、婚礼纪念日，到期待已久的假期旅行。</p>
+            <div class="features">
+                <div class="feature"><div class="emoji">⏳</div><div class="label">精准倒计时</div></div>
+                <div class="feature"><div class="emoji">🎂</div><div class="label">纪念日追踪</div></div>
+                <div class="feature"><div class="emoji">🎙️</div><div class="label">语音创建</div></div>
+                <div class="feature"><div class="emoji">📊</div><div class="label">统计分析</div></div>
+                <div class="feature"><div class="emoji">🧩</div><div class="label">桌面小组件</div></div>
+                <div class="feature"><div class="emoji">🔔</div><div class="label">智能提醒</div></div>
+                <div class="feature"><div class="emoji">📅</div><div class="label">日历同步</div></div>
+                <div class="feature"><div class="emoji">☁️</div><div class="label">iCloud 同步</div></div>
+                <div class="feature"><div class="emoji">🌍</div><div class="label">全球时区</div></div>
+                <div class="feature"><div class="emoji">🎨</div><div class="label">精美主题</div></div>
+                <div class="feature"><div class="emoji">🔁</div><div class="label">自动重复</div></div>
+                <div class="feature"><div class="emoji">🌐</div><div class="label">中英双语</div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon" style="background:#E8F5E9;">🛠</span> 技术支持</h2>
+            <p>如果您在使用 Daysly 时遇到任何问题，或有功能建议，欢迎随时联系我们：</p>
+            <ul>
+                <li>邮箱：<a href="mailto:gsf0425@163.com">gsf0425@163.com</a></li>
+            </ul>
+            <p style="margin-top: 12px;">我们会在 1-2 个工作日内回复您的邮件。</p>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon" style="background:#E3F2FD;">❓</span> 常见问题</h2>
+            <ul>
+                <li><strong>如何添加桌面小组件？</strong><br>长按主屏幕空白处 → 点击左上角"+" → 搜索"Daysly" → 选择喜欢的样式和尺寸添加。支持小、中、大三种尺寸及锁屏小组件。</li>
+                <li><strong>语音创建支持哪些格式？</strong><br>支持丰富的自然语言，例如：<br>
+                    · "明天下午3点开会"<br>
+                    · "10天后出差"<br>
+                    · "下个月5号生日 每年重复"<br>
+                    · "3个月后15号交报告"<br>
+                    自动识别日期、时间、重复频率，并根据关键词选择图标。
+                </li>
+                <li><strong>如何开启 iCloud 同步？</strong><br>前往设置页面，点击"iCloud 同步"即可。请确保设备已登录 iCloud 账号且 iCloud Drive 已开启。</li>
+                <li><strong>时区功能如何使用？</strong><br>创建事件时默认使用手机系统时区。如果事件发生在其他时区（如国际航班），可以手动选择目标时区，倒计时会自动按该时区正确计算。</li>
+                <li><strong>数据存储在哪里？</strong><br>所有数据默认存储在您的设备本地。开启 iCloud 同步后，数据会同步至您的 iCloud 账户。我们不会收集或访问您的任何数据。</li>
+                <li><strong>如何自动清除过期事件？</strong><br>前往设置页面 → "自动清除过期事件" → 选择保留时长（1/3/6/12个月）。超出时限的已过期事件会在下次打开应用时自动清除。</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon" style="background:#FFF3E0;">📋</span> 系统要求</h2>
+            <ul>
+                <li>iOS 14.0 或更高版本</li>
+                <li>兼容 iPhone</li>
+                <li>支持 iOS 主屏幕小组件与锁屏小组件</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 24px;">
+            <a href="privacy.html" class="nav-link">🔒 查看隐私政策</a>
+        </div>
+    </div>
+
+    <!-- English Content -->
+    <div id="content-en" style="display: none;">
+        <div class="card">
+            <h2><span class="icon" style="background:#FFF0E6;">📱</span> About Daysly</h2>
+            <p>Daysly is a beautifully designed countdown and anniversary tracking app that helps you elegantly track every important moment in your life — from upcoming birthdays and wedding anniversaries to long-awaited vacations.</p>
+            <div class="features">
+                <div class="feature"><div class="emoji">⏳</div><div class="label">Precise Countdown</div></div>
+                <div class="feature"><div class="emoji">🎂</div><div class="label">Anniversary</div></div>
+                <div class="feature"><div class="emoji">🎙️</div><div class="label">Voice Create</div></div>
+                <div class="feature"><div class="emoji">📊</div><div class="label">Statistics</div></div>
+                <div class="feature"><div class="emoji">🧩</div><div class="label">Widgets</div></div>
+                <div class="feature"><div class="emoji">🔔</div><div class="label">Reminders</div></div>
+                <div class="feature"><div class="emoji">📅</div><div class="label">Calendar Sync</div></div>
+                <div class="feature"><div class="emoji">☁️</div><div class="label">iCloud Sync</div></div>
+                <div class="feature"><div class="emoji">🌍</div><div class="label">Time Zones</div></div>
+                <div class="feature"><div class="emoji">🎨</div><div class="label">Themes</div></div>
+                <div class="feature"><div class="emoji">🔁</div><div class="label">Auto Repeat</div></div>
+                <div class="feature"><div class="emoji">🌐</div><div class="label">Bilingual</div></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon" style="background:#E8F5E9;">🛠</span> Technical Support</h2>
+            <p>If you encounter any issues while using Daysly, or have feature suggestions, please feel free to contact us:</p>
+            <ul>
+                <li>Email: <a href="mailto:gsf0425@163.com">gsf0425@163.com</a></li>
+            </ul>
+            <p style="margin-top: 12px;">We will respond to your email within 1-2 business days.</p>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon" style="background:#E3F2FD;">❓</span> FAQ</h2>
+            <ul>
+                <li><strong>How to add a home screen widget?</strong><br>Long press on the home screen → Tap "+" in the top left → Search "Daysly" → Choose your preferred size and style. Supports small, medium, large, and Lock Screen widgets.</li>
+                <li><strong>What voice formats are supported?</strong><br>Rich natural language is supported, such as:<br>
+                    · "meeting tomorrow at 3 PM"<br>
+                    · "trip in 10 days"<br>
+                    · "birthday next month 5th repeat yearly"<br>
+                    · "report in 3 months on the 15th"<br>
+                    Dates, times, repeat frequency, and icons are automatically recognized.
+                </li>
+                <li><strong>How to enable iCloud sync?</strong><br>Go to Settings and tap "iCloud Sync". Ensure your device is signed into iCloud with iCloud Drive enabled.</li>
+                <li><strong>How does the timezone feature work?</strong><br>Events default to your phone's system timezone. For events in different timezones (e.g., international flights), you can manually select the target timezone — the countdown will calculate correctly based on that timezone.</li>
+                <li><strong>Where is my data stored?</strong><br>All data is stored locally on your device by default. With iCloud sync enabled, data syncs to your personal iCloud account. We never collect or access any of your data.</li>
+                <li><strong>How to auto-clean expired events?</strong><br>Go to Settings → "Auto-clean Expired Events" → Select retention period (1/3/6/12 months). Expired events beyond the limit are automatically removed when you open the app.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon" style="background:#FFF3E0;">📋</span> System Requirements</h2>
+            <ul>
+                <li>iOS 14.0 or later</li>
+                <li>Compatible with iPhone</li>
+                <li>Supports iOS Home Screen and Lock Screen Widgets</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 24px;">
+            <a href="privacy.html" class="nav-link">🔒 View Privacy Policy</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2026 Daysly. All rights reserved.</p>
+    </div>
+</div>
+
+<script>
+function switchLang(lang) {
+    document.getElementById('content-zh').style.display = lang === 'zh' ? 'block' : 'none';
+    document.getElementById('content-en').style.display = lang === 'en' ? 'block' : 'none';
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.includes(lang === 'zh' ? '中文' : 'English'));
+    });
+}
+</script>
+</body>
+</html>
